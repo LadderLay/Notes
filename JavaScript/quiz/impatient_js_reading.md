@@ -158,7 +158,60 @@ func is a closure and stays connected with its birth environment. In that enviro
 解析：
 
 
-# Values
+# 11 Values
+
+## 阅读笔记
+
+- 类型 type —— 值的集合
+
+### 1、primitive values and objects 原始值和对象
+
+**primitive value:**
+原始值不可改变，无法对其的属性进行修改；
+变量/参数存储的是 值 本身， 传递和比较的也是原始值本身。
+
+**objects:**
+对象默认可改变
+将对象分配给变量或将其作为参数传递给函数时，将复制的是对象的指针/引用
+```
+const a = {}
+const b = a
+assert.equal(a === b, true)
+//`a` and `b` point to the same object
+//they “share” that object
+```
+对象比较的是标识而不是值本身
+```
+const obj = {}; 
+assert.equal(obj === obj, true); 
+// same identity
+assert.equal({} === {}, false); 
+// different identities, same content
+```
+
+Q：javascript引擎 共享主内存？
+
+### 2、 typeof & instanceof
+
+**typeof**
+undefined - undefined
+null - object
+function - function
+
+**instanceof**
+`A instanof B` 判断 A 是否为 B 的实例
+
+待补充
+原始值，null...
+
+Q：原型链部分有点生疏了需要复习
+
+
+### 3、类和构造函数
+
+
+
+
 
 ## 习题笔记
 
@@ -170,3 +223,26 @@ Each time the object literal {} is used, it creates a new object. And objects ar
 ### 考察：typeof
 const result = typeof function () {};
 // assert.equal(result, 'function')
+
+
+# 13 The non-values undefined and null
+
+### 1- 出现场合
+
+**`undefined` 出现场合**
+1）未初始化的变量
+2）参数缺失、`return`语句省略
+3）`obj.unknownProp` 未指定的属性
+**`null` 出现场合**
+1）`Object.prototype`没有原型
+2）正则匹配失败
+3）`JSON`不支持`undefined`只支持`null`
+
+ps.对象类型的变量使用`null`初始化
+
+### 2- 两者均没有属性
+
+### 3- `null` 表明“不是对象”，而 `undefined` 表示一个“既不是对象也不是原始值的初始化值” 
+
+# 14 Booleans
+
