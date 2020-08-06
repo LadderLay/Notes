@@ -195,7 +195,7 @@ Q：javascript引擎 共享主内存？
 
 **typeof**
 undefined - undefined
-null - object
+**null - object**
 function - function
 
 **instanceof**
@@ -245,4 +245,75 @@ ps.对象类型的变量使用`null`初始化
 ### 3- `null` 表明“不是对象”，而 `undefined` 表示一个“既不是对象也不是原始值的初始化值” 
 
 # 14 Booleans
+
+# 17 Unicode
+utf-16 utf-8
+
+code points & code units
+
+# 18 Strings
+- JS中的字符-string
+- `for-of`访问字符串代码点字符
+- 字符串加法规则
+
+### 三种将 value 转换为 string 的方法
+1、`String(x)`
+2、`''+x`
+3、`x.toString()` **对`null`和`undefined`不生效**
+
+`JSON.stringify()`也可以将值转换为字符串，仅支持null，布尔值，数字，字符串，数组和对象（始终将其视为由对象文字创建的样子）。
+
+### 字符串方法
+- .endsWith
+- .includes
+- .indexOf
+- .lastIndexOf
+- .match
+...
+
+# 19 Template
+template literals - normal string literals
+- 支持字符串插入
+- 可以跨越多行
+
+tagged templates 
+
+
+
+# 21 Control flow statement 控制流语句
+
+控制循环： `break`,`continue`
+if 语句 
+while 循环
+for 循环
+for-of  const
+**for-await-of**
+**for-in**
+
+# 22 Exception handling
+`throw`
+
+`try...catch`
+`finally`(alaways executed)
+
+`Error Classes`
+`properties of err`
+- .message
+- .stack
+
+# 23 Callable values
+## function功能
+- ordinary
+  - Real function
+  - Method
+  - Constructor function
+- specialized 只能拥有一种功能
+
+函数声明 函数表达式
+
+ordinary function & real function
+函数表达式的名称只能在函数内部访问，而函数声明的名称可在当前作用域内访问
+# 24 Modules
+
+
 
