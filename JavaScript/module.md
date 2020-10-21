@@ -49,5 +49,8 @@ import {foo} from './bar.mjs'; // import
 const {foo} = require('./bar.mjs'); // destructuring
 ```
 
+avoid mixing named exports and default exports
+
+
 
 
