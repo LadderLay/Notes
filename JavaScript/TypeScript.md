@@ -20,7 +20,29 @@ enum Color {Red（=0）, Green, Blue}
 let c: Color = Color.Green;
 ```
 Any-
+避免类型检查器对这些值进行检查而是直接让他们通过编译阶段对检查
 void-  
+表示没有任何类型。只能赋值为 null 或 undefined
+null,undefined-
+默认情况下，这两个值是所有类型的子类型。（特殊情况：指定了--strictNullChecks除外）
+Never-  
+表示永不存在的值的类型。
+never类型是任何类型的子类型，也可以赋值给任何类型；然而，没有类型是never的子类型或可以赋值给never类型（除了never本身之外）。 即使 any也不可以赋值给never。  
+Object-
+表示非原始类型  
+
+类型断言：  
+```
+//1 尖括号
+let someValue: any = "this is a string";
+let strLength: number = (<string>someValue).length;
+
+//2 as 语法
+let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;
+
+```
+注意，当你在TypeScript里使用JSX时，只有 as语法断言是被允许的。
 
 ### 变量声明
 var
@@ -28,6 +50,44 @@ let  词法作用域/块作用域
 const
 
 ### 接口
+对值所具有的结构进行类型检验
+```
+interface SquareConfig {
+  color: string;
+  width?: number;//可选属性
+  readonly x: number;//只读属性
+}
+```
+可选属性的作用： 对可能存在的属性进行预定义；捕获引用了不存在的属性值时的错误
+
+判断 readonly vs const 的使用
+readonly: 属性
+const: 变量
+
+处理对象字面量存在目标类型不包含的属性时，
+```
+//使用类型断言
+let mySquare = createSqure({...} as SqureConfig);
+//字符串索引签名
+interface SquareConfig {
+    color?: string;
+    width?: number;
+    [propName: string]: any;
+}
+//
+```
+函数类型的接口
+```
+interface SearchFunc {
+    (source: string, subString: string): boolean;
+}
+```
+对于函数类型的类型检查来说，函数的参数名不需要与接口中定义的名字相匹配；函数的参数会逐个进行检查，要求对应位置上的参数类型是兼容的。
+
+索引
+
+**type Vs. interface**
+
 
 ### 类
 protected
@@ -51,3 +111,8 @@ set fullName(newName: string) {
 
 抽象类- 
 
+## 类型推论
+
+
+## 声明文件
+类型别名 type
