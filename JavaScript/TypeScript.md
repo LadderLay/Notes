@@ -111,6 +111,9 @@ set fullName(newName: string) {
 
 抽象类- 
 
+### 泛型
+泛型约束
+
 ## 类型推论
 
 
