@@ -102,6 +102,16 @@ HTTP 首部字段：（响应首部字段 通用首部字段 实体首部字段�
 ### HTTP 首部字段
 
 ### HTTP/1.1 通用首部字段
-`Cache-Control`
-`Connection`
-`Pragma`
+`Cache-Control` 操作缓存的工作机制
+public private
+no-cache 客户端不接收缓存过的响应  中间的缓存服务器必须将客户端请求转发给源服务器 避免从缓存中返回过期资源 
+no-store 缓存不能在本地存储请求或响应的一部分
+s-maxage & max-age ： 功能类似，前者适用于供多位用户使用的公共缓存服务器
+no-transform: 缓存不能改变实体主体的媒体类型
+`Connection`  
+控制不再转发给代理的首部字段
+管理持久连接 
+`Pragma`  
+历史遗留字段 向后兼容  
+只用在客户端发送的请求中  
+客户端要求所有中间服务器不返回缓存的资源  
