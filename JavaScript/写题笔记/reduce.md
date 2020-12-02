@@ -1,4 +1,6 @@
 ## definition
+reduce() 方法对数组中的每个元素执行传入的reducer函数（升序执行） 
+
 接收四个参数：累加器 当前值 当前索引 源数组
 reducer 函数的返回值会分配给累加器
 `arr.reduce(callback(accumulator,currentvalue,index,array), initialvalue)`
@@ -25,7 +27,9 @@ var sum2 = arr.reduce(
 ```
 ### 累加对象数组中的值
 ```
-
+var initialValue = 0;
+var obj = [{x:1},{x:2},{x:3}];
+var sum = obj.reduce((accum,cur) => accum + cur.x, initialValue);
 ```
 
 ### 二维数组转化为一位数组
@@ -42,6 +46,26 @@ var flattened2  = arr.reduce(
     []
 )
 ```
+### 计算数组中每个元素出现的次数
+
+```
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+var countNames = names.reduce(function(allNames, name) {
+  if(name in allNames)
+    allNames[name]++; 
+  else 
+    allNames[name] = 1; //对象中未赋值的属性的值为undefined，因此需要单独处理进行初始化
+  return allNames;
+}, {})
+
+```
+
+### 按属性对 object 分类
+
+### 使用扩展运算符和initialValue绑定包含在对象数组中的数组
+
+### 数组去重
+
 
 ## polyfill
 ```

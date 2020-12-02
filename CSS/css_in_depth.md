@@ -1,4 +1,4 @@
-## 1.Cascade, specificity, and inheritance\
+## 1.Cascade, specificity, and inheritance
 Cascade 
 specificity
 inheritance
