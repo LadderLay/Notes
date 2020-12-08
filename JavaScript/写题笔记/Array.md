@@ -8,3 +8,24 @@ console.log(elements.join('-'));//-分隔         Fire-Air-Water
 ```
 
 如果 arr.length 为0，则返回空字符串
+
+### Array.prototype.filter()
+不修改原数组
+创建一个新数组，包含所有通过所提供函数实现的测试的所有元素
+callback 只会在已经赋值的索引上被调用，对于那些已经被删除或者从未被赋值的索引不会被调用
+### Array.prototype.concat()
+不修改原数组
+返回一个新数组，用于合并多个数组。
+
+### slice()
+不修改原数组
+返回一个新的数组对象,是原数组的一个浅拷贝
+[begin,end)
+如果 begin 超出原数组的索引范围，则会返回空数组
+如果 end 被省略，则 slice 会一直提取到原数组末尾。
+如果 end 大于数组的长度，slice 也会一直提取到原数组末尾。
+
+通过 slice 可以将一个类数组对象转换为一个新数组
+### Array.prototype.splice()
+修改原数组
+`array.splice(start,deleteCount,item...)`
