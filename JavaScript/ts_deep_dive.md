@@ -41,3 +41,36 @@ Q：import/require 仅仅是导入类型
 ### 动态导入表达式
                                  
 ## 类型系统
+**接口**：  
+```
+interface Name {
+  first: string;
+  second: string;
+}
+//合并了类型说明
+```
+**特殊类型**：  
+1.`null`  2.`undefined`
+null、undefined和any一样，能被赋予任意类型的变量。
+3.`void`
+4.`any`   
+在类型系统中，any能够兼容所有的类型包括其本身。「后门」一般的存在。
+
+**泛型**
+类型安全
+
+
+联合类型：
+属性可能为多种类型之一
+```
+function fnc(command: string[] | string) {
+    //...
+}
+```
+交叉类型：
+在 JavaScript 中， extend 是一种非常常见的模式，在这种模式中，你可以从两个对象中创建一个新对象，新对象拥有着两个对象所有的功能。
+交叉类型使得这种模式可以被安全地使用
+
+**接口**
+**JSX**
+**FAQs**
