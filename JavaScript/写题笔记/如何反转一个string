@@ -1,0 +1,27 @@
+# 如何在 JS 中 实现 reverse() 方法
+
+## 1 转化成数组进行处理
+```
+function reverseString(str) {
+    return str.split("").reverse().join("")
+}
+```
+## 2 倒序遍历
+```
+function reverseString(str) {
+    var newStr = "";
+    for(var i = str.length-1; i>=0; i++) {
+        newStr += str[i];
+    }
+    return newStr;
+}
+```
+## 3 递归
+```
+function reverseString(str) {
+    if(str === "")
+        return "";
+    else
+        return reverseString(str.substr(1)) + str.charAt(0);
+}
+```
